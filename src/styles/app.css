@@ -1,3 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
 :root {
   color-scheme: light;
   color: #102a43;
@@ -45,11 +57,11 @@ body.dark {
 }
 
 .app {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 32px 24px 48px;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
-
 .hero {
   display: flex;
   justify-content: space-between;

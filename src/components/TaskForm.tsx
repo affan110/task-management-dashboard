@@ -12,17 +12,11 @@ function TaskForm({ tasks, setTasks }: Props) {
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("Low");
   const [dueDate, setDueDate] = useState("");
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     if (!title.trim()) return;
-
-    // validate due date uses 4-digit year YYYY-MM-DD when provided
-    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-    if (dueDate && !dateRegex.test(dueDate)) {
-      setDueDateError("Please enter a valid date using YYYY-MM-DD (4-digit year).");
-      return;
-    }
 
     const newTask: Task = {
       id: Date.now().toString(),
@@ -39,7 +33,6 @@ function TaskForm({ tasks, setTasks }: Props) {
     setDescription("");
     setPriority("Low");
     setDueDate("");
-    setDueDateError("");
   };
 
   return (
@@ -80,7 +73,6 @@ function TaskForm({ tasks, setTasks }: Props) {
           Add Task
         </button>
       </div>
-      
     </form>
   );
 }

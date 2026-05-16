@@ -15,7 +15,6 @@ function TaskItem({ task, tasks, setTasks }: Props) {
   const [description, setDescription] = useState(task.description);
   const [priority, setPriority] = useState<Task["priority"]>(task.priority);
   const [dueDate, setDueDate] = useState(task.dueDate);
-  
 
   const toggleStatus = () => {
     const updatedTasks = tasks.map((t) =>
@@ -40,8 +39,6 @@ function TaskItem({ task, tasks, setTasks }: Props) {
   const saveEdit = () => {
     if (!title.trim()) return;
 
-    
-
     const updatedTasks = tasks.map((t) =>
       t.id === task.id
         ? {
@@ -55,7 +52,6 @@ function TaskItem({ task, tasks, setTasks }: Props) {
     );
 
     setTasks(updatedTasks);
-    setDueDateError("");
     setIsEditing(false);
   };
 
@@ -88,7 +84,9 @@ function TaskItem({ task, tasks, setTasks }: Props) {
             <div className="edit-row">
               <select
                 value={priority}
-                onChange={(e) => setPriority(e.target.value as Task["priority"])}
+                onChange={(e) =>
+                  setPriority(e.target.value as Task["priority"])
+                }
               >
                 <option>Low</option>
                 <option>Medium</option>
@@ -101,14 +99,13 @@ function TaskItem({ task, tasks, setTasks }: Props) {
                 onChange={(e) => setDueDate(e.target.value)}
               />
             </div>
-
-            
           </div>
 
           <div className="task-actions">
             <button className="primary" onClick={saveEdit}>
               Save
             </button>
+
             <button className="secondary" onClick={cancelEdit}>
               Cancel
             </button>
@@ -118,11 +115,17 @@ function TaskItem({ task, tasks, setTasks }: Props) {
         <>
           <div className="task-header">
             <h3>{task.title}</h3>
+
             <div className="task-badges">
               <span className={`badge priority ${task.priority.toLowerCase()}`}>
                 {task.priority}
               </span>
-              <span className={`badge status ${task.completed ? "completed" : "pending"}`}>
+
+              <span
+                className={`badge status ${
+                  task.completed ? "completed" : "pending"
+                }`}
+              >
                 {task.completed ? "Completed" : "Pending"}
               </span>
             </div>
@@ -142,9 +145,14 @@ function TaskItem({ task, tasks, setTasks }: Props) {
             <button className="primary" onClick={toggleStatus}>
               {task.completed ? "Mark Pending" : "Mark Complete"}
             </button>
-            <button className="secondary" onClick={() => setIsEditing(true)}>
+
+            <button
+              className="secondary"
+              onClick={() => setIsEditing(true)}
+            >
               Edit
             </button>
+
             <button className="danger" onClick={deleteTask}>
               Delete
             </button>
