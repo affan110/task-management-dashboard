@@ -96,12 +96,16 @@ npm run build
 
 ### Application Preview
 
-![Screenshot 1](./public/screenshots/Screenshot1.png)
+<p align="center">
+  <img src="./public/screenshots/Screenshot1.png" width="500" />
+</p>
 
-![Screenshot 2](./public/screenshots/Screenshot2.png)
-
+<p align="center">
+  <img src="./public/screenshots/Screenshot2.png" width="500" />
+</p>
 ---
 
 ## Author
 
-Abu Affan Ansari
+Abu Affan Ansari  
+M.Tech CSE, NIT Rourkela
