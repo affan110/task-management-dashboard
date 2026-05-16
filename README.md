@@ -96,9 +96,9 @@ npm run build
 
 ### Application Preview
 
-![Screenshot 1](./public/screenshots/screenshot1.png)
+![Screenshot 1](./public/screenshots/Screenshot1.png)
 
-![Screenshot 2](./public/screenshots/screenshot2.png)
+![Screenshot 2](./public/screenshots/Screenshot2.png)
 
 ---
 
